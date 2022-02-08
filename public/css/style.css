@@ -2,7 +2,7 @@
 	--body-bg-color: #e4e9f7;
 	--sidebar-color: #fff;
 	--primary-color: #548df5;
-	--secondary-color: #f6f5ff;
+	--secondary-color: #ebf2ff;
 	--toggle-color: #ddd;
 	--text-color: #303030;
 
@@ -11,29 +11,28 @@
 	--trans-04: all 0.4s ease;
 	--trans-05: all 0.5s ease;
 }
-
 * {
 	font-family: 'Montserrat', sans-serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
 body {
 	height: 100vh;
 	background: var(--body-bg-color);
 }
-
 .text {
 	font-size: 16px;
 	font-weight: 500;
 	color: var(--text-color);
 }
-
 .image {
 	min-width: 60px;
 	display: flex;
 	align-items: center;
+}
+.round-border {
+	border-radius: 6px;
 }
 
 /***** SIDEBAR ******/
@@ -51,7 +50,6 @@ body {
 }
 .img-text img {
 	width: 100px;
-	border-radius: 6px;
 }
 .img-text {
 	display: flex;
@@ -77,12 +75,95 @@ body {
 	justify-content: center;
 	border-radius: 50%;
 	color: var(--sidebar-color);
+	font-size: 22px;
 }
 .sidebar li {
 	height: 50px;
-	background: red;
 	margin-top: 10px;
 	list-style: none;
 	display: flex;
 	align-items: center;
+}
+.sidebar li a {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: var(--trans-04);
+}
+.sidebar li a:hover {
+	background: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+	color: var(--sidebar-color);
+}
+.sidebar li a .icon,
+.sidebar li a .text {
+	color: var(--text-color);
+	transition: var(--trans-02);
+}
+.menu-bar {
+	height: calc(100% - 50px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 60px;
+	font-size: 20px;
+}
+.search-box {
+	background: var(--secondary-color);
+}
+.search-box input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	border: none;
+	background: var(--secondary-color);
+}
+.mode {
+	background: var(--secondary-color);
+}
+.mode i {
+	position: absolute;
+}
+.moon-sun {
+	width: 50px;
+	display: flex;
+	align-items: center;
+}
+.mode i.sun {
+	opacity: 0;
+}
+.toggle-switch {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	min-width: 60px;
+	cursor: pointer;
+}
+.switch {
+	position: relative;
+	height: 22px;
+	width: 44px;
+	border-radius: 25px;
+	background: var(--toggle-color)
+}
+.switch::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	background: var(--sidebar-color);
 }
